@@ -211,7 +211,7 @@ const ResetPasswordScreen = ({route, navigation}) => {
         />
 
         <ButtonThemeComp
-          onPress={() => navigation.navigate('UserBottomnavigation')}
+          onPress={() => navigation.navigate('CaptionBottomNavigation')}
           text={'Submit'}
           style={{marginTop: hp('2')}}
         />

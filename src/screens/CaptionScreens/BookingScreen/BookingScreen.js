@@ -20,6 +20,7 @@ const GuiderBookingScreen = ({navigation}) => {
       innerImage: require('../../../images/TowingServices.png'),
       innerText: 'Towing Services',
       status: 'In Progress',
+      time: '2h ago',
     },
     {
       id: 2,
@@ -41,6 +42,7 @@ const GuiderBookingScreen = ({navigation}) => {
       text: 'Customer Services',
       status: 'In Progress',
       innerImage: require('../../../images/RefullingServices.png'),
+      time: '2h ago',
     },
     {
       id: 5,
@@ -62,6 +64,7 @@ const GuiderBookingScreen = ({navigation}) => {
       text: 'Electrical Services',
       innerImage: require('../../../images/ElectricalServices.png'),
       status: 'In Progress',
+      time: '2h ago',
     },
     {
       id: 8,
@@ -69,6 +72,7 @@ const GuiderBookingScreen = ({navigation}) => {
       text: 'Mechanical Services',
       innerImage: require('../../../images/MechinacalServices.png'),
       status: 'In Progress',
+      time: '2h ago',
     },
     {
       id: 9,
@@ -76,6 +80,7 @@ const GuiderBookingScreen = ({navigation}) => {
       text: 'Road Insurance',
       status: 'In Progress',
       innerImage: require('../../../images/MechinacalServices.png'),
+      time: '2h ago',
     },
   ]);
 
@@ -102,20 +107,20 @@ const GuiderBookingScreen = ({navigation}) => {
             width: wp('95'),
             justifyContent: 'space-between',
             alignSelf: 'center',
-          }}>
+          }}
+        >
           <ServicesCounterComp status={'Total Bookings'} number={22} />
           <ServicesCounterComp status={'Completed'} number={13} />
           <ServicesCounterComp status={'Cancelled'} number={7} />
         </View>
-        <TextHeadingCom
-          heading="Recent Booking"
+        <View
           style={{
-            marginTop: hp('2'),
-            marginLeft: hp('2'),
-            marginBottom: hp('1'),
+            flex: 1,
+            marginTop: hp('5'),
           }}
-        />
-        <BookingViewComp onPress={item => navigates(item)} data={bookings} />
+        >
+          <BookingViewComp onPress={item => navigates(item)} data={bookings} />
+        </View>
       </ScrollView>
     </View>
   );

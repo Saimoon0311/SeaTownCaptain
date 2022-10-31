@@ -21,6 +21,7 @@ const GuiderHomeScreen = ({navigation}) => {
       innerImage: require('../../../images/TowingServices.png'),
       innerText: 'Towing Services',
       status: 'In Progress',
+      time: '2h ago',
     },
     {
       id: 2,
@@ -42,6 +43,7 @@ const GuiderHomeScreen = ({navigation}) => {
       text: 'Customer Services',
       status: 'In Progress',
       innerImage: require('../../../images/RefullingServices.png'),
+      time: '2h ago',
     },
     {
       id: 5,
@@ -63,6 +65,7 @@ const GuiderHomeScreen = ({navigation}) => {
       text: 'Electrical Services',
       innerImage: require('../../../images/ElectricalServices.png'),
       status: 'In Progress',
+      time: '2h ago',
     },
     {
       id: 8,
@@ -70,6 +73,7 @@ const GuiderHomeScreen = ({navigation}) => {
       text: 'Mechanical Services',
       innerImage: require('../../../images/MechinacalServices.png'),
       status: 'In Progress',
+      time: '2h ago',
     },
     {
       id: 9,
@@ -77,6 +81,7 @@ const GuiderHomeScreen = ({navigation}) => {
       text: 'Road Insurance',
       status: 'In Progress',
       innerImage: require('../../../images/MechinacalServices.png'),
+      time: '2h ago',
     },
   ]);
 

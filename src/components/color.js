@@ -12,7 +12,7 @@ export const color = {
   themeColorDark: '#BCAFAF',
   lightGrayColor: '#E5E9EB',
   // lightGrayColor: '#E0E0E0',
-  lightBlueColor: '#90A1B6',
+  F2F8F9: '#90A1B6',
   textColor: '#434345',
   borderThirdColor: '#F0F0F0',
   white: '#ffff',

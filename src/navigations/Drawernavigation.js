@@ -165,7 +165,7 @@ const DrawerContent = props => {
           labelStyle={styles.drawerLblStyle}
           onPress={() => {
             props.navigation.closeDrawer(),
-              props.navigation.navigate('LoginScreen');
+              props.navigation.navigate('CaptainLoginScreen');
           }}
         />
       </View>

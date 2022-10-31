@@ -33,13 +33,15 @@ const DrawerComp = ({navigation}) => {
   return (
     <ImageBackground
       source={require('../../images/SeaTow-(User-Flow).png')}
-      style={styles.mainView}>
+      style={styles.mainView}
+    >
       <Animatable.View
         delay={150}
         easing={'linear'}
         direction={'normal'}
         animation="fadeInLeft"
-        style={styles.leftView}>
+        style={styles.leftView}
+      >
         <View style={{marginTop: hp('10'), marginLeft: wp('5')}}>
           <Text style={styles.topHeading}>Menu</Text>
           <View>
@@ -68,14 +70,16 @@ const DrawerComp = ({navigation}) => {
                   justifyContent: 'space-between',
                 }}
                 color={color.alertBackgroundColor}
-                onSelect={(index, value) => setSelectedIndex(value, index)}>
+                onSelect={(index, value) => setSelectedIndex(value, index)}
+              >
                 <RadioButton value={'item1'}>
                   <Text
                     style={{
                       color: 'white',
                       fontSize: hp('2'),
                       marginLeft: wp('2'),
-                    }}>
+                    }}
+                  >
                     Available
                   </Text>
                 </RadioButton>
@@ -86,7 +90,8 @@ const DrawerComp = ({navigation}) => {
                       color: 'white',
                       fontSize: hp('2'),
                       marginLeft: wp('2'),
-                    }}>
+                    }}
+                  >
                     On Duty
                   </Text>
                 </RadioButton>
@@ -97,7 +102,8 @@ const DrawerComp = ({navigation}) => {
                       color: 'white',
                       fontSize: hp('2'),
                       marginLeft: wp('2'),
-                    }}>
+                    }}
+                  >
                     Offline
                   </Text>
                 </RadioButton>
@@ -107,7 +113,8 @@ const DrawerComp = ({navigation}) => {
           <View>
             <TouchableOpacity
               onPress={() => navigateScreens('ChangePasswordScreen')}
-              style={styles.innerView}>
+              style={styles.innerView}
+            >
               <Ionicons
                 name="lock-closed-outline"
                 size={hp('3')}
@@ -134,7 +141,8 @@ const DrawerComp = ({navigation}) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigateScreens('TermOfServices')}
-            style={styles.innerView}>
+            style={styles.innerView}
+          >
             <MaterialIcons
               name="event-note"
               size={hp('3')}
@@ -145,7 +153,8 @@ const DrawerComp = ({navigation}) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigateScreens('PrivacyPolicy')}
-            style={styles.innerView}>
+            style={styles.innerView}
+          >
             <MaterialIcons
               name="event-note"
               size={hp('3')}
@@ -156,13 +165,14 @@ const DrawerComp = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <TouchableOpacity
-          onPress={() => navigateScreens('LoginScreen')}
+          onPress={() => navigateScreens('CaptainLoginScreen')}
           style={{
             ...styles.innerView,
             position: 'absolute',
             bottom: hp('10'),
             marginLeft: wp('5'),
-          }}>
+          }}
+        >
           <Ionicons
             name="log-in-outline"
             size={hp('3')}
@@ -174,7 +184,8 @@ const DrawerComp = ({navigation}) => {
               fontWeight: '500',
               fontSize: hp('2'),
               color: 'white',
-            }}>
+            }}
+          >
             Logout
           </Text>
         </TouchableOpacity>
@@ -183,7 +194,8 @@ const DrawerComp = ({navigation}) => {
         delay={100}
         easing={'linear'}
         direction={'normal'}
-        animation="fadeInUpBig">
+        animation="fadeInUpBig"
+      >
         <Pressable
           onPress={() => navigation.goBack()}
           style={{
@@ -196,7 +208,8 @@ const DrawerComp = ({navigation}) => {
             shadowRadius: 16.0,
 
             elevation: 24,
-          }}>
+          }}
+        >
           <Image
             style={{
               width: wp('30'),
