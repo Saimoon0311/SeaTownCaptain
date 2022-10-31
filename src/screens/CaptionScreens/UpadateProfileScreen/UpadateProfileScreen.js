@@ -89,7 +89,7 @@ const UpadateProfileScreen = ({route, navigation}) => {
   const DocumentView = props => {
     return (
       <View>
-        <View style={{...styles.button}}>
+        <View style={{...styles.button, height: hp('8')}}>
           <Image
             style={{...styles.image, ...props.imageStyle}}
             source={props?.image}

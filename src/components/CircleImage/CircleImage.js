@@ -10,8 +10,8 @@ export const CircleImage = props => {
         borderRadius: Math.round(
           Dimensions.get('window').width + Dimensions.get('window').height,
         ),
-        width: Dimensions.get('window').width * 0.15,
-        height: Dimensions.get('window').width * 0.15,
+        width: Dimensions.get('window').width * 0.13,
+        height: Dimensions.get('window').width * 0.13,
         ...styles,
       }}
     />
