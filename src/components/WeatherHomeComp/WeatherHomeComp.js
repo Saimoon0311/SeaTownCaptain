@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     alignSelf: 'center',
     flexDirection: 'row',
-    padding: 10,
+    padding: 18,
     alignItems: 'center',
   },
   degreeView: {color: 'yellow', fontSize: hp('6')},

@@ -184,6 +184,16 @@ const OtpScreen = ({route, navigation}) => {
           <OTPInputView
             autoFocusOnLoad={false}
             pinCount={4}
+            style={{borderRadius: 20}}
+            codeInputHighlightStyle={{
+              borderRadius: 10,
+              backgroundColor: 'white',
+              borderColor: color.onPressInpur,
+            }}
+            codeInputFieldStyle={{
+              borderRadius: 10,
+              backgroundColor: color.themeColorDarkinputColor,
+            }}
             // code={this.state.code} //You can supply this prop or not. The component will be used as a controlled / uncontrolled component respectively.
             // onCodeChanged = {code => { this.setState({code})}}
             // codeInputFieldStyle={styles.underlineStyleBase}

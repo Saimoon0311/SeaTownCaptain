@@ -7,7 +7,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {View, Platform, Dimensions, StyleSheet} from 'react-native';
+import {View, Platform, Dimensions, StyleSheet, Image} from 'react-native';
 import {captionScreens} from '../screens/CaptionScreens/index';
 import * as Animatable from 'react-native-animatable';
 import {color} from '../components/color';
@@ -44,7 +44,12 @@ function CaptionBottomNavigation() {
               animation="fadeInUpBig"
               direction={'normal'}
               delay={200}>
-              <Ionicons name={'home-outline'} color={color} size={hp('3')} />
+              <Image
+                source={require('../images/homeactive.png')}
+                resizeMode="contain"
+                style={{width: wp('7'), tintColor: color}}
+              />
+              {/* <Ionicons name={'home-outline'} color={color} size={hp('3')} /> */}
             </Animatable.View>
           ),
           title: 'Home',

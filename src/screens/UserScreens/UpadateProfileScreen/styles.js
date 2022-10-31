@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'white',
     width: wp('90'),
-    height: hp('6'),
+    height: hp('8'),
     marginBottom: hp('1'),
     alignItems: 'center',
     borderRadius: 10,

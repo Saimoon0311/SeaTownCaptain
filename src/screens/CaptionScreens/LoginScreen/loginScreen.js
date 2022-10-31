@@ -30,7 +30,6 @@ import {BottomTextComp} from '../../../components/BottomTextComp/BottomTextComp'
 
 const CaptainLoginScreen = ({route, navigation}) => {
   const disptach = useDispatch();
-  const emailRef = useRef();
   const LoginType = route.params;
   const [isKeyboardVisible, setKeyboardVisible] = useState(hp('0'));
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
@@ -144,7 +143,6 @@ const CaptainLoginScreen = ({route, navigation}) => {
           Lorem Ipsum is simply dummy text of the printing and typesetting
         </Text>
         <LoginInputComp
-          ref={emailRef}
           value={email}
           onChangeText={email => updateState({email})}
           inputText="Email"
@@ -179,13 +177,14 @@ const CaptainLoginScreen = ({route, navigation}) => {
           <Text style={styles.rememberText}>Remember me</Text>
           <TouchableOpacity
             style={{marginLeft: 'auto'}}
-            // onPress={() => navigation.navigate('ForgetScreen')}
-            onPress={() => navigation.navigate('PrivacyPolicy')}>
+            onPress={() => navigation.navigate('ForgetScreen')}
+            // onPress={() => navigation.navigate('PrivacyPolicy')}
+          >
             <Text style={styles.forgetText}>Forget Password?</Text>
           </TouchableOpacity>
         </View>
         <ButtonThemeComp
-          onPress={() => navigation.navigate('Drawernavigation')}
+          onPress={() => navigation.navigate('CreateProfileScreen')}
           // onPress={() => navigation.navigate('UserBottomnavigation')}
           text={'Login'}
           style={{marginTop: hp('2')}}

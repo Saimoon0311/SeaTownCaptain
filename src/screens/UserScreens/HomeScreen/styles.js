@@ -6,7 +6,6 @@ import {
 import {color} from '../../../components/color';
 
 export const styles = StyleSheet.create({
-
   requestSmallButton: {
     width: wp('50'),
     height: hp('5'),
@@ -15,10 +14,14 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: 'white',
     justifyContent: 'center',
-    
     alignItems: 'center',
     marginTop: hp('2'),
     flexDirection: 'row',
   },
-  serContainer:{flexDirection:'row', justifyContent:'space-between',width:wp('95'),alignItems:'center'}
+  serContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: wp('95'),
+    alignItems: 'center',
+  },
 });

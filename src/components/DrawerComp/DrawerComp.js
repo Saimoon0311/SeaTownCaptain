@@ -36,7 +36,6 @@ const DrawerComp = ({navigation}) => {
       style={styles.mainView}>
       <Animatable.View
         delay={150}
-        easing={'linear'}
         direction={'normal'}
         animation="fadeInLeft"
         style={styles.leftView}>
@@ -156,7 +155,7 @@ const DrawerComp = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <TouchableOpacity
-          onPress={() => navigateScreens('LoginScreen')}
+          onPress={() => navigateScreens('CaptainLoginScreen')}
           style={{
             ...styles.innerView,
             position: 'absolute',
@@ -179,23 +178,18 @@ const DrawerComp = ({navigation}) => {
           </Text>
         </TouchableOpacity>
       </Animatable.View>
-      <Animatable.View
-        delay={100}
-        easing={'linear'}
-        direction={'normal'}
-        animation="fadeInUpBig">
+      <Animatable.View delay={100} direction={'normal'} animation="fadeInRight">
         <Pressable
           onPress={() => navigation.goBack()}
           style={{
             shadowColor: '#000',
             shadowOffset: {
-              width: 0,
-              height: 12,
+              width: -10,
+              height: 20,
             },
-            shadowOpacity: 0.58,
-            shadowRadius: 16.0,
-
-            elevation: 24,
+            shadowOpacity: 1,
+            shadowRadius: 30.0,
+            elevation: 30,
           }}>
           <Image
             style={{

@@ -7,7 +7,7 @@ import {
 export const styles = StyleSheet.create({
   headerView: {
     width: wp('100'),
-    height: Platform.OS == 'ios' ? hp('12') : hp('7'),
+    height: Platform.OS == 'ios' ? hp('12') : hp('9'),
     flexDirection: 'row',
     alignItems: 'center',
     paddingTop: Platform.OS == 'ios' ? hp('5.5') : hp('0'),

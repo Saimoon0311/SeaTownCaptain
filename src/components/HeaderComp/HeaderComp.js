@@ -15,7 +15,7 @@ export const HeaderComp = props => {
           <Image
             source={require('../../images/Menu.png')}
             resizeMode="contain"
-            style={{height: hp('5'), width: wp('5')}}
+            style={{height: hp('5'), width: wp('5'), marginLeft: wp('5.5')}}
           />
         </TouchableOpacity>
       </View>
@@ -23,15 +23,6 @@ export const HeaderComp = props => {
         <Text style={styles.headerText}>{props?.heading}</Text>
       </View>
       <View style={styles.headerRightView}>
-        {props.notification && (
-          <Ionicons
-            name="notifications-outline"
-            color={'black'}
-            size={hp('3')}
-            style={{marginRight: wp('3')}}
-            onPress={() => props.notificationPress()}
-          />
-        )}
         {props.search && (
           <Ionicons
             name="search"
@@ -39,6 +30,15 @@ export const HeaderComp = props => {
             size={hp('3')}
             style={{marginRight: wp('3')}}
             onPress={() => props.searchPress()}
+          />
+        )}
+        {props.notification && (
+          <Ionicons
+            name="notifications-outline"
+            color={'black'}
+            size={hp('3')}
+            style={{marginRight: wp('5')}}
+            onPress={() => props.notificationPress()}
           />
         )}
         {props.edit && (
@@ -58,7 +58,7 @@ export const HeaderComp = props => {
 const styles = StyleSheet.create({
   mainView: {
     width: wp('100'),
-    height: Platform.OS == 'ios' ? hp('12') : hp('7'),
+    height: Platform.OS == 'ios' ? hp('12') : hp('9'),
     flexDirection: 'row',
     alignItems: 'center',
     paddingTop: Platform.OS == 'ios' ? hp('3') : hp('0'),
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   headerLeftView: {
     width: wp('22.5'),
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
   },
   headerCenterView: {
     width: wp('55'),

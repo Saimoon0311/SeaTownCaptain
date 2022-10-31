@@ -29,7 +29,7 @@ export const ServicesCounterComp = props => {
 
 const styles = StyleSheet.create({
   mainView: {
-    width: wp('30'),
+    width: wp('28'),
     height: hp('13'),
     borderWidth: 1,
     borderColor: 'black',

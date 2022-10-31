@@ -59,8 +59,8 @@ function AppTwo({navigation}) {
         Splash_Screen
       ) : (
         // <CaptainLoginScreen />
-        <NavigationContainer>
-          {/* <NavigationContainer theme={MyTheme}> */}
+        // <NavigationContainer>
+        <NavigationContainer theme={MyTheme}>
           <StackNavigatior />
         </NavigationContainer>
       )}

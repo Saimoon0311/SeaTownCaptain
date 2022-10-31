@@ -42,6 +42,7 @@ export const LoginInputComp = props => {
           color: 'black',
           fontSize: hp('2'),
           width: wp('65'),
+          ...props.inputView,
         }}
         ref={props?.ref}
         placeholder={props?.placeholder}
@@ -55,17 +56,21 @@ export const LoginInputComp = props => {
         onBlur={props?.onBlur}
         autoCapitalize={props?.autoCapitalize}
       />
-      <Ionicons
-        onPress={props?.eyeIconPress}
-        name={props?.eyeIconName}
-        color={
-          props?.isFocused == true
-            ? color.textSecondaryColor
-            : color.themeColorDark
-        }
-        style={{marginLeft: 'auto', marginRight: wp('3')}}
-        size={hp('2')}
-      />
+      {props?.changeIcon ? (
+        props?.changeIcon
+      ) : (
+        <Ionicons
+          onPress={props?.eyeIconPress}
+          name={props?.eyeIconName}
+          color={
+            props?.isFocused == true
+              ? color.textSecondaryColor
+              : color.themeColorDark
+          }
+          style={{marginLeft: 'auto', marginRight: wp('3')}}
+          size={hp('2')}
+        />
+      )}
     </View>
   );
 };

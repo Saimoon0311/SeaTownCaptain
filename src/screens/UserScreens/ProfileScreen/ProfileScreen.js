@@ -52,8 +52,7 @@ const ProfileScreen = ({navigation}) => {
       <View>
         <View style={{...styles.button}}>
           <Image
-            style={{...styles.image, width: wp('8'), height: hp('4')}}
-            resizeMode="contain"
+            style={{...styles.image, ...props.imageStyle}}
             source={props?.image}
           />
           <View>
@@ -158,6 +157,11 @@ const ProfileScreen = ({navigation}) => {
           image={require('../../../images/pdf.png')}
           title={'Dubai Marine license'}
           work={'55kb'}
+          imageStyle={{
+            height: wp('13'),
+            width: wp('9'),
+            // backgroundColor: 'red',
+          }}
         />
       </ScrollView>
     </>

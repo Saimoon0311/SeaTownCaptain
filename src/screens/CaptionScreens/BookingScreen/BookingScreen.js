@@ -99,22 +99,15 @@ const GuiderBookingScreen = ({navigation}) => {
         <View
           style={{
             flexDirection: 'row',
-            width: wp('95'),
+            width: wp('90'),
             justifyContent: 'space-between',
             alignSelf: 'center',
+            marginBottom: hp('1'),
           }}>
           <ServicesCounterComp status={'Total Bookings'} number={22} />
           <ServicesCounterComp status={'Completed'} number={13} />
           <ServicesCounterComp status={'Cancelled'} number={7} />
         </View>
-        <TextHeadingCom
-          heading="Recent Booking"
-          style={{
-            marginTop: hp('2'),
-            marginLeft: hp('2'),
-            marginBottom: hp('1'),
-          }}
-        />
         <BookingViewComp onPress={item => navigates(item)} data={bookings} />
       </ScrollView>
     </View>

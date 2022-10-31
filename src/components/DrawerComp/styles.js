@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     width: wp('60'),
     alignItems: 'center',
-    marginTop: hp('6'),
+    marginTop: hp('5.5'),
   },
   labelStyle: {
     fontWeight: '500',

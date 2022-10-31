@@ -80,8 +80,7 @@ const PermitFormScreen = ({route, navigation}) => {
       <View>
         <View style={{...styles.button}}>
           <Image
-            style={{...styles.image, width: wp('8'), height: hp('4')}}
-            resizeMode="contain"
+            style={{...styles.image, ...props.imageStyle}}
             source={props?.image}
           />
           <View>
@@ -121,8 +120,7 @@ const PermitFormScreen = ({route, navigation}) => {
           justifyContent: 'space-between',
           alignItems: 'center',
           ...styles,
-        }}
-      >
+        }}>
         <Image
           source={require('../../../images/Plus.png')}
           resizeMode="contain"
@@ -143,8 +141,7 @@ const PermitFormScreen = ({route, navigation}) => {
             flex: 1,
             paddingBottom: hp('3'),
             justifyContent: 'space-evenly',
-          }}
-        >
+          }}>
           <TextInputWithTextCom
             placeholder={'Boat Number'}
             upperText={'Boat Number'}
@@ -271,6 +268,11 @@ const PermitFormScreen = ({route, navigation}) => {
             image={require('../../../images/pdf.png')}
             title={'Dubai Marine license'}
             work={'55kb'}
+            imageStyle={{
+              height: wp('13'),
+              width: wp('9'),
+              // backgroundColor: 'red',
+            }}
           />
           <CommonButtonComp
             text="Submit"
