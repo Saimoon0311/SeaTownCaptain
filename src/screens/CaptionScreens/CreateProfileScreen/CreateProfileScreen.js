@@ -73,7 +73,7 @@ const CreateProfileScreen = ({navigation}) => {
         <View style={{...styles.trackInnerView, height: hp('40'), padding: 12}}>
           <Ionicons
             name="close-sharp"
-            color={color.lightBlueColor}
+            color={color.textInputColor}
             size={hp('3')}
             onPress={() => {
               setOpenConfirmView(false),

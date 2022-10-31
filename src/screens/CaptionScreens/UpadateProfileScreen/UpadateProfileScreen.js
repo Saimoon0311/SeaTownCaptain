@@ -305,6 +305,7 @@ const UpadateProfileScreen = ({route, navigation}) => {
           }}
         />
         <CommonButtonComp
+          onPress={() => console.log('djfnb')}
           viewStyle={{
             width: wp('90'),
             marginTop: hp('2'),

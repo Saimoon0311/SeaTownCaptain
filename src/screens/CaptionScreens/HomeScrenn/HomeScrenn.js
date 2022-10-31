@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity, Platform} from 'react-native';
 import {HeaderComp} from '../../../components/HeaderComp/HeaderComp';
 import {TextHeadingCom} from '../../../components/TextHeadingCom/TextHeadingCom';
 import {WeatherHomeComp} from '../../../components/WeatherHomeComp/WeatherHomeComp';
@@ -109,7 +109,7 @@ const GuiderHomeScreen = ({navigation}) => {
             heading="Recent Booking"
             style={{
               marginTop: hp('2'),
-              marginLeft: hp('2'),
+              marginLeft: Platform.OS == 'android' ? hp('3') : hp('2'),
               marginBottom: hp('1'),
             }}
           />

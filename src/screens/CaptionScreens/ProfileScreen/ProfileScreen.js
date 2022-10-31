@@ -32,7 +32,7 @@ const GuiderProfileScreen = ({navigation}) => {
           />
           <View>
             <Text style={{...styles.text}}>{props?.title}</Text>
-            <Text style={{...styles.text, color: color.lightBlueColor}}>
+            <Text style={{...styles.text, color: color.textInputColor}}>
               {props?.work}
             </Text>
           </View>
@@ -57,7 +57,7 @@ const GuiderProfileScreen = ({navigation}) => {
           />
           <View>
             <Text style={{...styles.text}}>{props?.title}</Text>
-            <Text style={{...styles.text, color: color.lightBlueColor}}>
+            <Text style={{...styles.text, color: color.textInputColor}}>
               {props?.work}
             </Text>
           </View>

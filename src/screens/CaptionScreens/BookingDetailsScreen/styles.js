@@ -51,7 +51,7 @@ export const styles = StyleSheet.create({
   },
   messageText: {
     width: wp('90'),
-    color: color.lightBlueColor,
+    color: color.textInputColor,
     alignSelf: 'center',
     textAlign: 'justify',
     marginTop: hp('1'),

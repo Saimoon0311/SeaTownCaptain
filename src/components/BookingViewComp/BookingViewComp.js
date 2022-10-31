@@ -114,7 +114,7 @@ export const BookingViewComp = props => {
             </Text>
             <Text
               style={{
-                color: color.lightBlueColor,
+                color: color.textInputColor,
               }}>
               Distance
             </Text>

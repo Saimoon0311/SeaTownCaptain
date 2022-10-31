@@ -6,7 +6,7 @@ buildscript {
     ext {
         buildToolsVersion = "31.0.0"
         minSdkVersion = 21
-        compileSdkVersion = 31
+        compileSdkVersion = 33
         targetSdkVersion = 31
 
         if (System.properties['os.arch'] == "aarch64") {
@@ -57,7 +57,7 @@ subprojects {
     afterEvaluate {project ->
         if (project.hasProperty("android")) {
             android {
-                compileSdkVersion 27
+                compileSdkVersion 33
             }
         }
     }

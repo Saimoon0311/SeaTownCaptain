@@ -131,7 +131,10 @@ const LoginScreen = ({route, navigation}) => {
     <KeyboardAvoidingView
       behavior={Platform.OS == 'ios' ? 'position' : 'height'}
       style={styles.container}>
-      <StatusBar hidden={false} barStyle={'dark-content'} />
+      <StatusBar
+        hidden={false}
+        barStyle={Platform.OS == 'ios' ? 'dark-content' : 'default'}
+      />
       <ScrollView contentContainerStyle={styles.scrollView}>
         <Image
           source={require('../../../images/Loginogo.png')}

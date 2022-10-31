@@ -271,8 +271,9 @@ keyPassword MYAPP_RELEASE_KEY_PASSWORD
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 implementation project(':react-native-community-checkbox')
+implementation "com.facebook.react:react-native:0.58.3"
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:+"  // From node_modules
+    // implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation project(':react-native-vector-icons')
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
