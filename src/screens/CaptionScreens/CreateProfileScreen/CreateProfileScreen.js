@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   ScrollView,
   ImageBackground,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import {TextHeadingCom} from '../../../components/TextHeadingCom/TextHeadingCom';
 import {
@@ -18,6 +20,7 @@ import TextInputWithTextCom from '../../../components/TextInputWithTextCom/TextI
 import {LoginInputComp} from '../../../components/LoginInputComp/LoginInputComp';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import Octicons from 'react-native-vector-icons/Octicons';
 import {color} from '../../../components/color';
 import {styles} from './styles';
@@ -28,15 +31,19 @@ const CreateProfileScreen = ({navigation}) => {
     Designation: false,
     Company: false,
     Working: false,
+    from: false,
+    to: false,
   });
   const [loginUser, setLoginUser] = useState({
     City: '',
     Designation: '',
     Company: '',
     Working: '',
+    from: '',
+    to: '',
   });
   const [openConfirmView, setOpenConfirmView] = useState(false);
-  const {City, Designation, Company, Working} = loginUser;
+  const {City, Designation, Company, Working, from, to} = loginUser;
   const updateState = data => setLoginUser(() => ({...loginUser, ...data}));
   // Focused handler
   const handleInputFocus = textinput => {
@@ -109,9 +116,11 @@ const CreateProfileScreen = ({navigation}) => {
   };
 
   return (
-    <View>
-      <TextHeadingCom heading="Create Profile" style={styles.topHeading} />
+    <KeyboardAvoidingView
+      behavior={Platform.OS == 'ios' ? 'position' : 'height'}
+      style={{flex: 1}}>
       <ScrollView contentContainerStyle={{paddingBottom: hp('20')}}>
+        <TextHeadingCom heading="Create Profile" style={styles.topHeading} />
         <View>
           <CircleImage
             image={require('../../../images/PngItem_1300400.png')}
@@ -121,7 +130,7 @@ const CreateProfileScreen = ({navigation}) => {
             style={{
               position: 'absolute',
               bottom: 0,
-              right: wp('30'),
+              right: wp('35'),
             }}>
             <Image
               source={require('../../../images/Camera.png')}
@@ -201,9 +210,9 @@ const CreateProfileScreen = ({navigation}) => {
           <PlusButtonText
             styles={{
               marginLeft: 'auto',
-              width: wp('30'),
+              width: wp('25'),
             }}
-            text="Upload More"
+            text="Add More"
           />
         </View>
         <LoginInputComp
@@ -240,7 +249,58 @@ const CreateProfileScreen = ({navigation}) => {
           }
           style={{marginTop: hp('2'), alignSelf: 'center', width: wp('90')}}
         />
-
+        <View
+          style={{
+            flexDirection: 'row',
+            alignSelf: 'center',
+            width: wp('90'),
+            justifyContent: 'space-between',
+          }}>
+          <LoginInputComp
+            value={from}
+            onChangeText={from => updateState({from})}
+            inputText="From"
+            placeholder="From"
+            onFocus={() => handleInputFocus('from')}
+            onBlur={() => handleInputBlur('from')}
+            eyeIconName={'eye-off-outline'}
+            keyboardType={'numeric'}
+            isFocused={isFocused.from}
+            inputView={{
+              width: wp('33'),
+            }}
+            changeIcon={
+              <AntDesign
+                size={hp('2')}
+                name="calendar"
+                color={color.textPrimaryColor}
+              />
+            }
+            style={{marginTop: hp('2'), alignSelf: 'center', width: wp('44')}}
+          />
+          <LoginInputComp
+            value={to}
+            onChangeText={to => updateState({to})}
+            inputText="to"
+            placeholder="To"
+            onFocus={() => handleInputFocus('to')}
+            onBlur={() => handleInputBlur('to')}
+            eyeIconName={'eye-off-outline'}
+            isFocused={isFocused.to}
+            keyboardType={'numeric'}
+            inputView={{
+              width: wp('33'),
+            }}
+            changeIcon={
+              <AntDesign
+                size={hp('2')}
+                name="calendar"
+                color={color.textPrimaryColor}
+              />
+            }
+            style={{marginTop: hp('2'), alignSelf: 'center', width: wp('44')}}
+          />
+        </View>
         <TextHeadingCom
           heading="Required Documents"
           style={{paddingLeft: wp('5'), marginTop: hp('5')}}
@@ -260,7 +320,11 @@ const CreateProfileScreen = ({navigation}) => {
           />
         </ImageBackground>
         <View
-          style={{flexDirection: 'row', width: wp('90'), alignSelf: 'center'}}>
+          style={{
+            flexDirection: 'row',
+            width: wp('90'),
+            alignSelf: 'center',
+          }}>
           <View style={{width: wp('45')}}>
             <TextHeadingCom
               heading="Emirates ID*, License*"
@@ -281,7 +345,7 @@ const CreateProfileScreen = ({navigation}) => {
         />
       </ScrollView>
       {openConfirmView && <ProfileUpdateView />}
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

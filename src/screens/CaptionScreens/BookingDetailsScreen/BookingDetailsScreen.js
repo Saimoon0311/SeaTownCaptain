@@ -334,15 +334,22 @@ const BookingDetailsScreen = ({route, navigation}) => {
               <Text style={styles.rememberText}>Weather Condition</Text>
             </View>
           </View>
-          <TextInput
-            multiline
-            numberOfLines={10}
-            style={styles.input}
-            onChangeText={onChangeNumber}
-            value={number}
-            placeholder="Type your message"
-            keyboardType="numeric"
-          />
+          <View style={styles.input}>
+            <TextInput
+              multiline
+              style={{
+                paddingTop: hp('-3'),
+                color: 'black',
+                alignSelf: 'flex-start',
+                marginTop: hp('-1'),
+                marginLeft: wp('2'),
+              }}
+              onChangeText={onChangeNumber}
+              value={number}
+              placeholder="Type your message"
+              keyboardType="numeric"
+            />
+          </View>
 
           {/* <Text
             style={{
@@ -402,11 +409,23 @@ const BookingDetailsScreen = ({route, navigation}) => {
   const CheckStatus = status => {
     return checkStatus[status];
   };
+  let statusValue = {
+    Completed: 'green',
+    'In Progress': color.textPrimaryColor,
+    Cancelled: 'red',
+    Schedule: color.yellowTxtColor,
+  };
+
+  const checkStatusValue = status => {
+    return statusValue[status];
+  };
   return (
     <View>
       <BackHeaderComp
         onPress={() => navigation.goBack()}
         heading={'Services Request'}
+        statusColor={checkStatusValue(item.status)}
+        Status={item?.status}
       />
       <ScrollView contentContainerStyle={{paddingBottom: hp('20')}}>
         <Image

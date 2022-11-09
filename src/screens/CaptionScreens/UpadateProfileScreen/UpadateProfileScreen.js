@@ -6,6 +6,8 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 import {BackHeaderComp} from '../../../components/BackHeaderComp/BackHeaderComp';
 import {CircleImage} from '../../../components/CircleImage/CircleImage';
@@ -140,7 +142,9 @@ const UpadateProfileScreen = ({route, navigation}) => {
     );
   };
   return (
-    <View>
+    <KeyboardAvoidingView
+      behavior={Platform.OS == 'ios' ? 'position' : 'height'}
+      style={{flex: 1}}>
       <BackHeaderComp
         onPress={() => navigation.goBack()}
         heading={'Edit Profile'}
@@ -313,7 +317,7 @@ const UpadateProfileScreen = ({route, navigation}) => {
           text="Save Change"
         />
       </ScrollView>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

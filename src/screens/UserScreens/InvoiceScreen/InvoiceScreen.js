@@ -158,7 +158,7 @@ const InvoiceScreen = ({navigation}) => {
               alignSelf: 'center',
               width: wp('20'),
               height: hp('8'),
-              marginRight: wp('3'),
+              marginleft: wp('3'),
             }}
             source={require('../../../images/5.png')}
           />

@@ -90,7 +90,7 @@ const GuiderProfileScreen = ({navigation}) => {
             marginTop: hp('2'),
           }}
         />
-        <Text style={styles.captionText}>Caption</Text>
+        <Text style={styles.captionText}>Captain</Text>
         <TextHeadingCom
           heading="Brandon Westervelt"
           style={{marginTop: hp('2'), textAlign: 'center'}}

@@ -47,6 +47,7 @@ export const LoginInputComp = props => {
         ref={props?.ref}
         placeholder={props?.placeholder}
         placeholderTextColor={color.themeColorDark}
+        // keyboardType={'numeric'}
         keyboardType={props?.keyboardType}
         secureTextEntry={props?.secureTextEntry}
         editable={props?.editable}

@@ -27,7 +27,7 @@ function CaptionBottomNavigation() {
         swipeEnabled: true,
         animationEnabled: true,
         tabBarStyle: {
-          height: hp('10'),
+          height: Platform.OS == 'ios' ? hp('10') : hp('8'),
           paddingBottom: hp('0'),
           // bottom: Platform.OS == 'ios' ? hp('4') : hp('2'),
           width: wp('100'),
@@ -67,10 +67,10 @@ function CaptionBottomNavigation() {
               animation="fadeInRightBig"
               direction={'normal'}
               delay={300}>
-              <Ionicons
-                name={'calendar-outline'}
-                color={color}
-                size={hp('3')}
+              <Image
+                source={require('../images/Bookingsactive.png')}
+                resizeMode="contain"
+                style={{width: wp('7'), tintColor: color}}
               />
             </Animatable.View>
           ),
@@ -90,7 +90,11 @@ function CaptionBottomNavigation() {
               animation="fadeInRightBig"
               direction={'normal'}
               delay={300}>
-              <Ionicons name={'person-outline'} color={color} size={hp('3')} />
+              <Image
+                source={require('../images/Profile.png')}
+                resizeMode="contain"
+                style={{width: wp('7'), tintColor: color}}
+              />
             </Animatable.View>
           ),
           title: '',

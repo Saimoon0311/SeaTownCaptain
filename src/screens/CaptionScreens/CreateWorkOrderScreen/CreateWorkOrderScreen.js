@@ -1,5 +1,13 @@
 import React, {useState} from 'react';
-import {View, Text, Image, TextInput, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 import {BackHeaderComp} from '../../../components/BackHeaderComp/BackHeaderComp';
 import {
   widthPercentageToDP as wp,
@@ -87,78 +95,79 @@ const CreateWorkOrderScreen = ({navigation}) => {
         onPress={() => navigation.goBack()}
         heading="Create Work Order"
       />
-      <ScrollView
-        contentContainerStyle={{
-          backgroundColor: color.white,
-        }}
-      >
-        <View style={{paddingBottom: hp('3')}}>
-          <View style={styles.detailsView}>
-            <View
-              style={{
-                width: wp('40'),
-                justifyContent: 'space-between',
-              }}
-            >
-              <Text style={styles.leftText}>Booking ID</Text>
-              <Text style={styles.leftText}>Date</Text>
-              <Text style={styles.leftText}>Bill to</Text>
+      <KeyboardAvoidingView
+        behavior={Platform.OS == 'ios' ? 'position' : 'height'}
+        style={{flex: 1}}>
+        <ScrollView
+          contentContainerStyle={{
+            backgroundColor: color.white,
+          }}>
+          <View style={{paddingBottom: hp('3')}}>
+            <View style={styles.detailsView}>
+              <View
+                style={{
+                  width: wp('40'),
+                  justifyContent: 'space-between',
+                }}>
+                <Text style={styles.leftText}>Booking ID</Text>
+                <Text style={styles.leftText}>Date</Text>
+                <Text style={styles.leftText}>Bill to</Text>
+              </View>
+              <View
+                style={{
+                  width: wp('40'),
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-end',
+                }}>
+                <Text style={styles.rightText}>#00068</Text>
+                <Text style={styles.rightText}>13 Dec 2022</Text>
+                <Text style={styles.rightText}>Alfonso Vaccaro</Text>
+              </View>
             </View>
-            <View
-              style={{
-                width: wp('40'),
-                justifyContent: 'space-between',
-                alignItems: 'flex-end',
-              }}
-            >
-              <Text style={styles.rightText}>#00068</Text>
-              <Text style={styles.rightText}>13 Dec 2022</Text>
-              <Text style={styles.rightText}>Alfonso Vaccaro</Text>
-            </View>
-          </View>
-          <View style={styles.mainViewContainer}>
-            <ReqiuredView
-              width={'40'}
-              placeholder={'0.1 mile'}
-              text={'Distance*'}
-            />
+            <View style={styles.mainViewContainer}>
+              <ReqiuredView
+                width={'40'}
+                placeholder={'0.1 mile'}
+                text={'Distance*'}
+              />
 
+              <ReqiuredView
+                width={'40'}
+                iconNotShow={true}
+                placeholder={'2 hrs 45 m'}
+                text={'Time Consumed*'}
+              />
+            </View>
+          </View>
+          <View style={styles.midContainer}>
             <ReqiuredView
-              width={'40'}
-              iconNotShow={true}
-              placeholder={'2 hrs 45 m'}
-              text={'Time Consumed*'}
+              iconNotShow={false}
+              placeholder={'Delivery of Feuls'}
+              text={'Select Services'}
+            />
+            <ReqiuredView placeholder={'20 ltr'} text={'Qty'} />
+          </View>
+          <Divider style={styles.dividerView} />
+          <View style={styles.midContainer}>
+            <ReqiuredView
+              placeholder={'Electric Services'}
+              text={'Select Services'}
             />
           </View>
-        </View>
-        <View style={styles.midContainer}>
-          <ReqiuredView
-            iconNotShow={false}
-            placeholder={'Delivery of Feuls'}
-            text={'Select Services'}
-          />
-          <ReqiuredView placeholder={'20 ltr'} text={'Qty'} />
-        </View>
-        <Divider style={styles.dividerView} />
-        <View style={styles.midContainer}>
-          <ReqiuredView
-            placeholder={'Electric Services'}
-            text={'Select Services'}
-          />
-        </View>
-        <View style={styles.lastView}>
-          <TextButtonComp
-            onPress={() => console.log('AddSERVICES')}
-            text={'Add Services '}
-            name={'plus'}
-          />
-          <ButtonThemeComp
-            onPress={() => updateState({TrackViewState: true})}
-            style={{marginTop: wp('5')}}
-            text={'Send To Admin'}
-          />
-        </View>
-      </ScrollView>
+          <View style={styles.lastView}>
+            <TextButtonComp
+              onPress={() => console.log('AddSERVICES')}
+              text={'Add Services '}
+              name={'plus'}
+            />
+            <ButtonThemeComp
+              onPress={() => updateState({TrackViewState: true})}
+              style={{marginTop: wp('5')}}
+              text={'Send To Admin'}
+            />
+          </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
       {TrackViewState && ServicesRequestView()}
     </>
   );

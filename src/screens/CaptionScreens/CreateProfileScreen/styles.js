@@ -39,8 +39,8 @@ export const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
   circleImage: {
-    width: Dimensions.get('window').width * 0.4,
-    height: Dimensions.get('window').width * 0.4,
+    width: Dimensions.get('window').width * 0.3,
+    height: Dimensions.get('window').width * 0.3,
     alignSelf: 'center',
     marginTop: hp('2'),
   },

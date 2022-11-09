@@ -21,6 +21,7 @@ export const color = {
   txtInputbackColor: '#F5F5F5',
   badgeColor: '#FF2D2D',
   // lightBlueColorLight: ,
+  lightBlueColor: '#90A1B6',
   bottomBarColorlightView: '#DACBFA',
   ThankYouColor: '#8161C8',
   BookingTypeColor: '#3ba3b5',
