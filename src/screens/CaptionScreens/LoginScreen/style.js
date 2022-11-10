@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: 'white',
     height: hp('100'),
+    textDecorationLine: 'underLine',
   },
   topImage: {
     width: wp('50'),
