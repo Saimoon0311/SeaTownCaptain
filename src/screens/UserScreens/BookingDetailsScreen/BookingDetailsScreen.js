@@ -313,15 +313,17 @@ const BookingDetailsScreen = ({route, navigation}) => {
               <Text style={styles.rememberText}>Weather Condition</Text>
             </View>
           </View>
-          <TextInput
-            multiline
-            numberOfLines={10}
-            style={styles.input}
-            onChangeText={onChangeNumber}
-            value={number}
-            placeholder="Type your message"
-            keyboardType="numeric"
-          />
+          <View style={styles.input}>
+            <TextInput
+              // multiline
+              // numberOfLines={10}
+              style={{backgroundColor: 'red'}}
+              onChangeText={onChangeNumber}
+              value={number}
+              placeholder="Type your message"
+              keyboardType="numeric"
+            />
+          </View>
 
           {/* <Text
             style={{
