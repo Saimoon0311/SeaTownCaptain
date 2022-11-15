@@ -175,6 +175,7 @@ const CaptainLoginScreen = ({route, navigation}) => {
         <View style={styles.rememberView}>
           <CheckBox
             disabled={false}
+            tintColors={'black'}
             value={toggleCheckBox}
             onValueChange={newValue => setToggleCheckBox(newValue)}
           />
